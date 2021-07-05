@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Bootry.Models.Post>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
+<div class="card-body table-responsive p-0" style="height: 300px;">
+    <table class="table table-head-fixed text-nowrap">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>başlık</th>
+                <th>tarih</th>
+                <th>okunma sayısı</th>
+                <th>kategori</th>
+                <th>yazar</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var post in Model)
+            {
+                <tr>
+                    <td>@post.ID</td>
+                    <td>
+                        @{
+                            if (post.Title.Length >= 50)
+                            {
+                                @post.Title.Substring(0, 49);<span>...</span>
+                            }
+                            else
+                            {
+                                @post.Title
+                            }
+                        }
+                    </td>
+                    <td>@post.Date</td>
+                    <td>@post.ViewCount</td>
+                    <td>@post.Category.Name</td>
+                    <td>@post.Writer.Name @post.Writer.LastName</td>
+                    <td>
+                        <a href="/posts/edit/@post.ID" class="btn btn-success text-white">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="/cope-at/@post.ID" class="btn btn-warning text-white">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

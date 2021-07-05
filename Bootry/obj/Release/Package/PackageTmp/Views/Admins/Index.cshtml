@@ -1,0 +1,151 @@
+﻿@model IEnumerable<Bootry.Models.Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLte.cshtml";
+}
+@if (Session["admin"] != null)
+{
+    <br />
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>
+                        @Html.Action("getUserCount", "Admins")
+                    </h3>
+
+                    <p>Kullanıcı sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>@Html.Action("getPostCount", "Admins")</h3>
+
+                    <p>Aktif Gönderiler</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>@Html.Action("getPostViewSum", "Admins")</h3>
+
+                    <p>Toplam gönderi görüntülemesi</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>@Html.Action("getCommentsCount", "Admins")</h3>
+
+                    <p>yorum sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <!-- /.card-header -->
+            @if (Session["admin"] != null)
+            {
+                @Html.Action("AllPosts","Admins")
+            }
+
+            @if (Session["yazar"] != null)
+            {
+                @Html.Action("PostByWriter", "Posts")
+            }
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+<div class="row">
+    <!-- /.col -->
+    @if (Session["admin"] != null)
+    {
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">kategoriler</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                    @Html.Action("GetCategories", "Admins")
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+    }
+    <!-- /.col -->
+    <!-- /.col -->
+    @if (Session["admin"] != null)
+    {
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">yazarlar</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>isim soyisim</th>
+                                <th>gönderi sayısı</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (ViewBag.Writers != null)
+                            {
+                                foreach (var writer in ViewBag.Writers)
+                                {
+                                    <tr>
+                                        <td>@writer.ID</td>
+                                        <td>@writer.Name @writer.LastName</td>
+                                        <td>
+                                            @writer.Post.Count
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+    }
+    <!-- /.col -->
+</div>
+

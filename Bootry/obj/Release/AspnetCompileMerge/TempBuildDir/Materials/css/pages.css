@@ -1,0 +1,157 @@
+@charset "UTF-8";
+#category-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li a {
+  color: #00d2d3;
+}
+.pagination li a:hover {
+  color: #01a3a4;
+}
+
+.card a:before {
+  display: none;
+}
+
+.line div {
+  left: 6% !important;
+}
+
+.search-line div {
+  left: 10% !important;
+}
+
+.sidebar-element {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+}
+
+/** ///////// CONTACT PAGE ////////// **/
+section.contact .description {
+  text-align: center;
+  text-transform: uppercase;
+}
+section.contact .form-row div {
+  position: relative;
+}
+section.contact .form-group {
+  max-width: 400px;
+  margin: 10px auto 50px auto;
+}
+section.contact .form-group input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+section.contact .form-group input:focus {
+  outline: none;
+}
+section.contact .form-group .namebefore {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  padding: 7px 15px;
+  background-color: #01a3a4;
+}
+section.contact .form-group .namebefore i {
+  color: #fffff0;
+  font-size: 14px;
+  width: 14px;
+}
+section.contact .form-group .form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/** ///////// LOGİN PAGE, FORGOT PAGE, REGİSTER PAGE ////////// **/
+section.login .login-form, section.forgot .login-form, section.register .login-form {
+  max-width: 300px;
+  margin: auto;
+}
+section.login .login-form form, section.forgot .login-form form, section.register .login-form form {
+  padding: 50px 20px;
+  box-shadow: 1px 1px 3px 1px #ddd;
+}
+section.login .login-form span, section.forgot .login-form span, section.register .login-form span {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  padding: 7px 15px;
+  background-color: #01a3a4;
+}
+section.login .login-form span i, section.forgot .login-form span i, section.register .login-form span i {
+  color: #fffff0;
+  font-size: 14px;
+  width: 14px;
+}
+section.login .login-form .form-control:focus, section.forgot .login-form .form-control:focus, section.register .login-form .form-control:focus {
+  box-shadow: none;
+}
+
+/** ///////// PAGES ////////// **/
+section.page {
+  margin-bottom: 100px;
+}
+section.page .page-title {
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/** ///////// 404 PAGE ////////// **/
+section.notfound .kapsayici, .internal-server .kapsayici {
+  display: flex;
+  justify-content: center !important;
+}
+section.notfound .kapsayici div, .internal-server .kapsayici div {
+  font-size: 200px;
+  color: #01a3a4;
+}
+section.notfound .kapsayici .zero, section.notfound .kapsayici .zero-2, .internal-server .kapsayici .zero, .internal-server .kapsayici .zero-2 {
+  color: #00d2d3;
+  position: relative;
+  top: 67px;
+  font-size: 115px;
+}
+section.notfound .kapsayici .zero-2, .internal-server .kapsayici .zero-2 {
+  font-size: 152px;
+  position: relative;
+  top: 38px;
+}
+section.notfound .message, .internal-server .message {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 17px;
+  color: #393e46;
+}
+section.notfound .message h1, .internal-server .message h1 {
+  font-weight: bold;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+section.notfound .message p, .internal-server .message p {
+  position: relative;
+  top: -30px;
+}
+section.notfound .form-wrapper, .internal-server .form-wrapper {
+  margin: -20px auto 50px auto;
+  max-width: 500px;
+  background: #fff;
+}
+section.notfound .home-link, .internal-server .home-link {
+  position: relative;
+  top: -50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+section.notfound .home-link a, .internal-server .home-link a {
+  color: #191E21;
+}
+section.notfound .home-link a:after, .internal-server .home-link a:after {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  margin-left: 5px;
+}

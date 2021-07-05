@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_SiteMain.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Materials/css/pages.css" />
+<section id="main" class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="login-form mt-5 mb-5">
+                    <div class="pagenav">
+                        <ul>
+                            <li>
+                                <a href="">home</a>
+                            </li>
+                            <li>giriş yapın</li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <p class="text-center text-capitalize text-dark">hesabınızla giriş yapın...</p>
+                    </div>
+                    @using (Html.BeginForm("Login", "Admins", FormMethod.Post))
+                    {
+                        if (ViewBag.message != null)
+                        {
+                            <div class="alert alert-danger">
+                                bilgiler hatalı
+                            </div>
+                        }
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <input type="text" class="form-control" name="Mail" id="Mail" placeholder="Mail" required>
+                                <span class="namebefore">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <input type="password" class="form-control" name="Password" id="Password" placeholder="şifre" required>
+                                <span class="namebefore">
+                                    <i class="fa fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary float-left" type="submit">Giriş</button>
+                        <a href="forgot.html" class="btn float-right">Forgot Password?</a>
+
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

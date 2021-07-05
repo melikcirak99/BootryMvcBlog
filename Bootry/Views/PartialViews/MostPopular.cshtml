@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Bootry.Models.Post>
+
+    @foreach (var post in Model)
+    {
+        <div style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4 col-sm-4 col-xs-4 mt-4">
+                    <img data-src="/Materials/images/news/@post.Image" alt="@post.Image" class="card-img lazy">
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                    <div class="card-body">
+                        <h5 class="card-title f-card-title">
+                            @if (post.Summary != null)
+                            {
+                                @post.Summary.Substring(0,19)<span>...</span>
+                            }
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }

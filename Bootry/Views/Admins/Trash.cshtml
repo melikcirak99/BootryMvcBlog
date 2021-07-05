@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Trash";
+    Layout = "~/Views/Shared/_AdminLte.cshtml";
+}
+<br />
+@if (ViewBag.message != null)
+{
+    if (ViewBag.message == "1")
+    {
+        <div class="text-success">
+            gönderi silindi
+        </div><br />
+    }
+    else if(ViewBag.message == "0")
+    {
+        <div class="text-danger">
+            bir hata oluştu
+        </div><br />
+    }
+}
+<h2>çöp kutusu</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            @Html.Action("InTrash", "PartialViews")
+        </div>
+    </div>
+</div>

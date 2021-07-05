@@ -1,0 +1,135 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Bootry.Models.Post>
+
+@{
+    if (ViewBag.category != null)
+    {
+        ViewBag.Title = ViewBag.category.Name;
+    }
+    else
+    {
+        ViewBag.Title = "kategori sayfası";
+    }
+
+    Layout = "~/Views/Shared/_SiteMain.cshtml";
+}
+<style>
+    .page-item a {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #007bff;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+    }
+</style>
+<section id="main" class="category">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12 mt-5">
+                <div class="row">
+                    <div class="col-12 mb-5 mt-5 sidebar">
+                        <div class="sidebar-element">
+                            <div class="element-title">
+                                <h4>Categories</h4>
+                            </div>
+                            <div class="element-item">
+                                <ul>
+                                    @Html.Action("CategoriesList", "PartialViews")
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-element other">
+                            <div class="element-title">
+                                <h4 class="side-search">sitede arayın</h4>
+                            </div>
+                            <div class="element-item">
+                                @Html.Action("SearchForm", "PartialViews")
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-sm-12 col-xs-12 mt-5">
+                <div class="pagenav">
+                    <ul>
+                        <li>
+                            <a href="">home</a>
+                        </li>
+                        <li>
+                            @if (ViewBag.category != null)
+                            {
+                                @ViewBag.category.Name
+                            }
+                        </li>
+                    </ul>
+                </div>
+                <div class="line">
+                    <div>
+                        @if (ViewBag.category != null)
+                        {
+                            @ViewBag.category.Name <span>(@Model.TotalItemCount)</span>
+
+                        }
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 news-group-1">
+                    @foreach (var post in Model)
+                    {
+                        <div class="col mb-4">
+                            <div class="card">
+                                <div class="Card-image"><a href="/gonderi/@post.Category.Name/@post.SeoTitle/@post.ID" title="@post.Title"> <img src="~/Materials/images/news/@post.Image" class="card-img-top" alt="@post.Image"></a></div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="/gonderi/@post.Category.Name/@post.SeoTitle/@post.ID">@post.Title</a></h5>
+                                    <span class="badge badge-primary category">@post.Category.Name</span>
+                                    <span class="post-wiev">
+                                        <i class="fas fa-eye"></i> @post.ViewCount
+                                    </span>
+                                    <span class="time"><a><i class="fas fa-calendar-alt"></i> @post.Date.ToString("dd/MM/yyyy HH:mm")</a></span>
+
+                                    <div class="card-text">
+                                        @if (post.Summary != null)
+                                        {
+                                            if (post.Summary.Length > 70)
+                                            {
+                                                @post.Summary.Substring(0, 69)<span>...</span>
+                                            }
+                                            else
+                                            {
+                                                @post.Summary
+                                            }
+                                        }
+                                    </div>
+                                    <a href="/gonderi/@post.Category.Name/@post.SeoTitle/@post.ID" class="btn btn-primary float-left">
+                                        All Read
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                        </svg>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <nav aria-label="Page navigation" id="category-pagination">
+                    @Html.PagedListPager((IPagedList)Model, paged => Url.Action("ListByCategories", new { paged }),
+                  new PagedListRenderOptions
+                  {
+                      LiElementClasses = new string[] { "page-item" },
+                      UlElementClasses = new string[] { "pagination" },
+
+                  }
+
+              )
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>

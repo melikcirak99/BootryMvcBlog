@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Bootry.Models.Comment>
+
+<table class="table">
+    <tr>
+        <th>
+            yorum
+        </th>
+        <th>
+            tarih
+        </th>
+        <th>
+            onay durumu
+        </th>
+        <th>
+            gönderi
+        </th>
+        <th>
+           kullanıcı
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.commentContent
+        </td>
+        <td>
+            @item.Date
+        </td>
+        <td>
+            @item.isApproved
+        </td>
+        <td>
+            @if (item.Post.Title.Length > 40)
+            {
+                @item.Post.Title.Substring(0,39)<span> ...</span>
+            }
+            else
+            {
+                @item.Post.Title
+            }
+        </td>
+        <td>
+            @item.User.Name @item.User.LastName
+        </td>
+        <td>
+            <a href="/comments/edit/@item.ID" class="btn btn-primary">düzenle</a>
+            <a href="/comments/details/@item.ID" class="btn btn-info">incele</a>
+            <a href="/comments/delete/@item.ID" class="btn btn-danger">sil</a>
+        </td>
+    </tr>
+}
+
+</table>
