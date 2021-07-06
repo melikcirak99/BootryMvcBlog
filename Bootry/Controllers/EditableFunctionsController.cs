@@ -114,7 +114,7 @@ namespace Bootry.Controllers
             }
             return "tüm gönderilere eklendi";
         }
-
+          //bu fonksiyon alıntıdır...
         public string FriendlyURLTitle(string pTitle)
         {
             pTitle = pTitle.Replace(" ", "-");
