@@ -5,4 +5,4 @@
 *.xml linguist-detectable=false
 *.css linguist-detectable=false
 *.scss linguist-detectable=false
-*.* linguist-language=Java
+*.* linguist-language=C#
