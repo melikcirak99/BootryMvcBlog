@@ -30,6 +30,7 @@ SAYFALAR
 - iletişim sayfası (/iletisim)
 - 404 hata sayfası
 - giriş sayfası ( /giris-{type} )
+
 ADMİN SAYFALARI
 - Gönderi oluşturma ( posts/create )
 - çöp kutusu ( admins/trash )
@@ -40,7 +41,7 @@ ADMİN SAYFALARI
 
 
 PROJENİN TASARIM DOSYALARI NEREDE?
-- Projeye ait css, scss, js vs. dosyaları Materials klasörü altındadır. - bir css değişikliği yapmak istiyorsanız style.scss dosyasını değiştirip compile etmeniz veya doğrudan style.min.css değişiklik dosyasından yapmanız mümkün. 
+- Projeye ait css, scss, js vs. dosyaları Materials klasörü altındadır. - bir css değişikliği yapmak istiyorsanız style.scss dosyasını değiştirip compile etmeniz veya doğrudan style.min.css  dosyasından değişiklik yapmanız mümkün. 
 
 
 BİR GÖNDERİ RESMİ NASIL SEÇERİM 
@@ -48,6 +49,3 @@ BİR GÖNDERİ RESMİ NASIL SEÇERİM
 
 NOT : PROJEDE KULLANILAN TÜM PARTİALVİEW'LER TEK BİR CONTROLLER (PartialViewsController.cs) VE VİEW TARAFINDA TEK BİR KLASÖRDE TOPLANMIŞTIR.
 
-Lisans:
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Lisansı" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/melik65/BootryMvcBlog" property="cc:attributionName" rel="cc:attributionURL">melik çırak</a> isimli yazarın <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bootry mvc blog</span> başlıklı eseri bu <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"> Creative Commons Atıf-GayriTicari-Türetilemez 4.0 Uluslararası Lisansı </a> ile lisanslanmıştır.
