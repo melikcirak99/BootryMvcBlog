@@ -49,7 +49,7 @@ BİR GÖNDERİ RESMİ NASIL SEÇERİM
 
 VERİTABANI
 - Sql server 2019
-![boootryVt](https://user-images.githubusercontent.com/59912391/126438856-addbff8f-222c-427e-9aee-16d5d6ef1009.JPG)
+![boootryVt](https://user-images.githubusercontent.com/59912391/126439269-2baad6a3-3541-48f4-b08e-30f0d35d8462.JPG)
 
 
 NOT : PROJEDE KULLANILAN TÜM PARTİALVİEW'LER TEK BİR CONTROLLER (PartialViewsController.cs) VE VİEW TARAFINDA TEK BİR KLASÖRDE TOPLANMIŞTIR.
