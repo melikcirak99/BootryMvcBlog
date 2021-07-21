@@ -47,5 +47,10 @@ PROJENİN TASARIM DOSYALARI NEREDE?
 BİR GÖNDERİ RESMİ NASIL SEÇERİM 
 - Bir gönderi eklemeden önce, Materials/images/news klasörüne bir resim ekleyin ve gönderi oluştururken ilgili alana bu resmin adını yazmanız yeterlidir. metin içine resim eklemek için ise doğrudan editörden resim seçebilirsiiz.
 
+VERİTABANI
+- Sql server 2019
+![boootryVt](https://user-images.githubusercontent.com/59912391/126438856-addbff8f-222c-427e-9aee-16d5d6ef1009.JPG)
+
+
 NOT : PROJEDE KULLANILAN TÜM PARTİALVİEW'LER TEK BİR CONTROLLER (PartialViewsController.cs) VE VİEW TARAFINDA TEK BİR KLASÖRDE TOPLANMIŞTIR.
 
