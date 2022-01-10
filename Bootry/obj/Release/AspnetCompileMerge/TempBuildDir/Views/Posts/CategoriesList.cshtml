@@ -1,9 +1,0 @@
-﻿@model IEnumerable<Bootry.Models.Category>
-
-@foreach (var cat in Model)
-{
-    <li class="grey">
-        <a href="/kategori/@cat.Name-@cat.ID">@cat.Name ( <span>@cat.Post.Where(x => x.isActive == true).ToList().Count</span> )</a>
-        <span class="kayan grey"></span>
-    </li>
-}
